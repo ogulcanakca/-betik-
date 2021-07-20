@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using System.Collections.Generic;
 using αbetik.ELibrary.Business.Concrete;
 using αbetik.ELibrary.DataAccess.Abstract;
 using αbetik.ELibrary.Entities.ComplexTypes;
@@ -11,7 +12,6 @@ namespace αbetik.ELibrary.Business.Tests
     [TestClass]
     public class PersonManagerTests
     {
-        
         [TestMethod]
         public void Is_getBookDetails_working()
         {
@@ -19,13 +19,12 @@ namespace αbetik.ELibrary.Business.Tests
             var mock = new Mock<IPersonDal>();
 
             var manager = new PersonManager(mock.Object);
-            //if (manager.GetirBookDetails(person) == null)
-            //{
-            //    throw new Exception("nuul geldi");
-            //}
 
-            
-           
+            List<Person> asda = manager.GetPeople();
+            if (asda==null)
+            {
+                throw new Exception("aq");
+            }
         }
     }
 }

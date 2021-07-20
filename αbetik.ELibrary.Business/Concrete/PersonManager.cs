@@ -26,6 +26,7 @@ namespace αbetik.ELibrary.Business.Concrete
         {
             _bookDal = bookDal;
         }
+
         [FluentValidationAspect(typeof(PersonValidator))]
         public Person Add(Person person)
         {

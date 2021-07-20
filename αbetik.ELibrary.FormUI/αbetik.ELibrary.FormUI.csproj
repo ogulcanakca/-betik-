@@ -5,18 +5,19 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B556077B-15AF-416D-B557-4B8194DBDF08}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>αbetik.ELibrary.DataAccess</RootNamespace>
-    <AssemblyName>αbetik.ELibrary.DataAccess</AssemblyName>
+    <ProjectGuid>{8893B852-E211-4FFD-B404-80124C613E4D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>αbetik.ELibrary.FormUI</RootNamespace>
+    <AssemblyName>αbetik.ELibrary.FormUI</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,6 +27,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -47,34 +49,60 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IBookDal.cs" />
-    <Compile Include="Abstract\IPersonDal.cs" />
-    <Compile Include="Concrete\ELibraryContext.cs" />
-    <Compile Include="Concrete\EntityFramework\EfBookDal.cs" />
-    <Compile Include="Concrete\EntityFramework\EfPersonDal.cs" />
-    <Compile Include="Concrete\EntityFramework\Mappings\BookMap.cs" />
-    <Compile Include="Concrete\EntityFramework\Mappings\PersonRoleMap.cs" />
-    <Compile Include="Concrete\EntityFramework\Mappings\RoleMap.cs" />
-    <Compile Include="Concrete\EntityFramework\Mappings\PersonMap.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\αbetik.ELibrary.Core\αbetik.ELibrary.Core.csproj">
-      <Project>{93C91DD3-067E-4806-A7FF-F8F9B3E570D7}</Project>
-      <Name>αbetik.ELibrary.Core</Name>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\αbetik.ELibrary.Business\αbetik.ELibrary.Business.csproj">
+      <Project>{6DDBFE6C-2EB6-434A-829C-FDABA116F66B}</Project>
+      <Name>αbetik.ELibrary.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\αbetik.ELibrary.DataAccess\αbetik.ELibrary.DataAccess.csproj">
+      <Project>{B556077B-15AF-416D-B557-4B8194DBDF08}</Project>
+      <Name>αbetik.ELibrary.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\αbetik.ELibrary.Entities\αbetik.ELibrary.Entities.csproj">
       <Project>{051A8909-83AE-481D-B979-24E78FBE583A}</Project>
       <Name>αbetik.ELibrary.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

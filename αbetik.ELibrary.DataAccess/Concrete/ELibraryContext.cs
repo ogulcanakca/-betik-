@@ -16,10 +16,7 @@ namespace αbetik.ELibrary.DataAccess.Concrete
             Database.SetInitializer<ELibraryContext>(null);
         }
         public DbSet<Person> People { get; set; }
-        public DbSet<Other> Others { get; set; }
         public DbSet<Book> Books { get; set; }
-        public DbSet<Teacher> Teachers{ get; set; }
-        public DbSet<Student> Students { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<PersonRole> PeopleRoles { get; set; }
 

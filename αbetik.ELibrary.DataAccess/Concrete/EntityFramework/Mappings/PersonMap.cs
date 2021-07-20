@@ -8,16 +8,15 @@ using αbetik.ELibrary.Entities.Concrete;
 
 namespace αbetik.ELibrary.DataAccess.Concrete.EntityFramework.Mappings
 {
-    public class StudentMap : EntityTypeConfiguration<Student>
+    public class PersonMap : EntityTypeConfiguration<Person>
     {
-        public StudentMap()
+        public PersonMap()
         {
-            ToTable(@"Students", @"dbo");
+            ToTable(@"People", @"dbo");
             HasKey(x => x.Id);
             Property(x => x.TakenBookId).HasColumnName("TakenBookId");
             Property(x => x.TcNo).HasColumnName("TcNo");
             Property(x => x.StarterTime).HasColumnName("StarterTime");
-            Property(x => x.SchoolType).HasColumnName("SchoolType");
             Property(x => x.Password).HasColumnName("Password");
             Property(x => x.LastName).HasColumnName("LastName");
             Property(x => x.FirstName).HasColumnName("FirstName");
