@@ -19,5 +19,6 @@ namespace αbetik.ELibrary.Entities.Concrete
         public int TakenBookId { get; set; }
         public DateTime DeadTime { get; set; }
         public DateTime StarterTime { get; set; }
+        
     }
 }

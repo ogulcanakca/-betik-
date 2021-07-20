@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace αbetik.ELibrary.Entities.Concrete
+namespace αbetik.ELibrary.Entities.ComplexTypes
 {
-    public class Student : Person
+    public class UserRoleItem
     {
-     public string SchoolType { get; set; }
+
+        public string RoleName { get; set; }
     }
 }

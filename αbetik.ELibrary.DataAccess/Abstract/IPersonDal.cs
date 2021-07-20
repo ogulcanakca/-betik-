@@ -11,6 +11,6 @@ namespace αbetik.ELibrary.DataAccess.Abstract
 {
     public interface IPersonDal : IEntityRepository<Person>
     {
-        List<BookDetail> GetBookDetails(Person person, int Id);
+        List<BookDetail> GetBookDetails(Person person);
     }
 }

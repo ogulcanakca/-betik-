@@ -12,7 +12,7 @@ namespace αbetik.ELibrary.DataAccess.Concrete.EntityFramework
 {
     public class EfBookDal : EfEntityRepositoryBase<Book, ELibraryContext>, IBookDal
     {
-       
 
+        
     }
 }

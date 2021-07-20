@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "αbetik.ELibrary.Business",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "αbetik.ELibrary.Business.Tests", "αbetik.ELibrary.Business.Tests\αbetik.ELibrary.Business.Tests.csproj", "{812E2A01-1B51-432F-807E-0611BAC5ACAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonManagerConsoleTest", "PersonManagerConsoleTest\PersonManagerConsoleTest.csproj", "{5FA0D635-766C-4B84-9557-80F137BC0262}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{812E2A01-1B51-432F-807E-0611BAC5ACAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{812E2A01-1B51-432F-807E-0611BAC5ACAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{812E2A01-1B51-432F-807E-0611BAC5ACAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FA0D635-766C-4B84-9557-80F137BC0262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA0D635-766C-4B84-9557-80F137BC0262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA0D635-766C-4B84-9557-80F137BC0262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA0D635-766C-4B84-9557-80F137BC0262}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

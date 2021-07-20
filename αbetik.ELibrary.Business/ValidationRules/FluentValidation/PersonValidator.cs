@@ -12,7 +12,7 @@ namespace αbetik.ELibrary.Business.ValidationRules.FluentValidation
     {
         public PersonValidator()
         {
-            RuleFor(p => p.Id).NotEmpty().WithMessage("Id boş bırakılamaz.");
+            
             RuleFor(p => p.FirstName).NotEmpty().WithMessage("Ad boş bırakılamaz.");
             RuleFor(p => p.LastName).NotEmpty().WithMessage("Soyad boş bırakılamaz.");
             RuleFor(p => p.TcNo).NotEmpty().WithMessage("TC kimlik numarası boş bırakılamaz.");

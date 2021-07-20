@@ -51,9 +51,9 @@ namespace αbetik.ELibrary.Business.Concrete
         {
             return _personDal.Update(person);
         }
-        public List<BookDetail> GetirBookDetails(Person person, int Id)
+        public List<BookDetail> GetirBookDetails(Person person)
         {
-            return _personDal.GetBookDetails(person, person.TakenBookId);
+            return _personDal.GetBookDetails(person);
         }
     }
 }

@@ -12,17 +12,19 @@ namespace αbetik.ELibrary.DataAccess.Concrete.EntityFramework
 {
     public class EfPersonDal : EfEntityRepositoryBase<Person, ELibraryContext>, IPersonDal
     {
-        public List<BookDetail> GetBookDetails(Person person, int Id)
+        public List<BookDetail> GetBookDetails(Person person)
         {
             using (ELibraryContext context = new ELibraryContext())
             {
                 var result = from books in context.Books
                              join people in context.People
-                             on books.BookId equals person.TakenBookId
+                             on books.BookId equals people.TakenBookId
+                             where books.BookId == person.TakenBookId
+                             
                              select new BookDetail
                              {
 
-                                 BookId = person.TakenBookId,
+                                 BookId = people.TakenBookId,
                              };
                 return result.ToList();
             }
