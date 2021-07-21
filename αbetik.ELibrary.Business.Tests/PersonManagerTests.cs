@@ -2,6 +2,7 @@
 using Moq;
 using System;
 using System.Collections.Generic;
+using αbetik.ELibrary.Business.Abstract;
 using αbetik.ELibrary.Business.Concrete;
 using αbetik.ELibrary.DataAccess.Abstract;
 using αbetik.ELibrary.Entities.ComplexTypes;
@@ -16,12 +17,12 @@ namespace αbetik.ELibrary.Business.Tests
         public void Is_getBookDetails_working()
         {
             Person person = new Person();
-            var mock = new Mock<IPersonDal>();
+            var mock = new Mock<IPersonService>();
+            var manager = mock.Object;
+            
 
-            var manager = new PersonManager(mock.Object);
-
-            List<Person> asda = manager.GetPeople();
-            if (asda==null)
+           
+            if (manager.GetPeople()==null)
             {
                 throw new Exception("aq");
             }

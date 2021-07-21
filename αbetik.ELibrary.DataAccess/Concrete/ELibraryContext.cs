@@ -22,8 +22,9 @@ namespace αbetik.ELibrary.DataAccess.Concrete
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Configurations.Add(new PersonRoleMap()/*, new TeacherMap(), new BookMap(), new StudentMap(), new RoleMap(), new OtherMap()*/);
-        }                                                           /* İleride AutoMapper ekleyeceğiz. */        
+            modelBuilder.Configurations.Add(new PersonRoleMap());
+        }                                                        
+        
         
     }
 
