@@ -11,19 +11,23 @@ using αbetik.ELibrary.Entities.Concrete;
 namespace αbetik.ELibrary.Business.Tests
 {
     [TestClass]
-    public class PersonManagerTests
+    public class PersonManagerTests 
     {
-        [TestMethod]
+        [TestMethod, ExpectedException(typeof(System.NullReferenceException))]
         public void Is_getBookDetails_working()
         {
-            Person person = new Person();
-            var mock = new Mock<IPersonService>();
-            var manager = mock.Object;
-            
 
-           
-            if (manager.GetPeople()==null)
+            //var mock = new Mock<IPersonService>();
+            //var manager = mock.Object;
+
+            Mock<IPersonDal> mock = new Mock<IPersonDal>();
+            PersonManager pm = new PersonManager(mock.Object);
+            pm.GetPeople();
+            
+            if (pm== null)
             {
+                
+
                 throw new Exception("aq");
             }
         }

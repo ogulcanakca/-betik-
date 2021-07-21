@@ -15,6 +15,7 @@ namespace αbetik.ELibrary.Business.Abstract
         Person Add(Person person);
         Person Update(Person person);
         void Delete(Person person);
+        void Ban(Person person, Book book);
 
 
     }

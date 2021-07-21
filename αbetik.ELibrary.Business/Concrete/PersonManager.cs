@@ -1,4 +1,9 @@
-﻿using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
+﻿using DevFramework.Core.Aspects.Postsharp.CacheAspects;
+using DevFramework.Core.Aspects.Postsharp.LogAspects;
+using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
+using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
+using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
+using DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,19 +18,26 @@ using αbetik.ELibrary.Entities.Concrete;
 
 namespace αbetik.ELibrary.Business.Concrete
 {
+    [CacheRemoveAspect("",typeof(MemoryCacheManager))]
+    [LogAspect(typeof(FileLogger))]
     public class PersonManager : IPersonService
     {
         private IBookDal _bookDal;
         private IPersonDal _personDal;
+        private IPersonService _personService;
+  
         public PersonManager(IPersonDal personDal)
         {
-           
+            
             _personDal = personDal;
         }
-        public PersonManager(IBookDal bookDal)
+        public PersonManager(IBookDal bookDal, IPersonService personService)
         {
+            _personService = personService;
             _bookDal = bookDal;
         }
+
+        
 
         [FluentValidationAspect(typeof(PersonValidator))]
         public Person Add(Person person)
@@ -55,6 +67,14 @@ namespace αbetik.ELibrary.Business.Concrete
         public List<BookDetail> GetirBookDetails(Person person)
         {
             return _personDal.GetBookDetails(person);
+        }
+        [TransactionScopeAspect]
+        public void Ban(Person person, Book book)
+        {
+            _personService.GetByTcNo("TcNo yaz");
+            _bookDal.Delete(book);
+            _personDal.Delete(person);
+            
         }
     }
 }
