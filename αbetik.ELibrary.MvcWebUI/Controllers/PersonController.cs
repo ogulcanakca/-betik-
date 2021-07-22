@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using αbetik.ELibrary.Business.Abstract;
+using αbetik.ELibrary.MvcWebUI.Models;
 
 namespace αbetik.ELibrary.MvcWebUI.Controllers
 {

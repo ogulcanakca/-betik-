@@ -1,4 +1,4 @@
-﻿@Model αbetik.ELibrary.MvcWebUI.Models.PersonListViewModel
+﻿@model αbetik.ELibrary.MvcWebUI.Models.PersonListViewModel
 @{
     Layout = null;
 }
@@ -8,14 +8,14 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>index</title>
+    <title>Index</title>
 </head>
 <body>
     <div>
-        @foreach (var person in Model.People)
+        @foreach (var people in Model.People)
         {
-            @person.FirstName
-            <br />
+            @people.FirstName
+            <br>
         }
     </div>
 </body>

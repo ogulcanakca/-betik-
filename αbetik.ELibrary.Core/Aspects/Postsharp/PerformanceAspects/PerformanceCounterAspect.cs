@@ -37,6 +37,7 @@ namespace DevFramework.Core.Aspects.Postsharp.PerformanceAspects
             _stopwatch.Stop();
             if (_stopwatch.Elapsed.TotalSeconds>_interval)
             {
+                // ileride emaile mesaj at. 22.07.2021
                 Debug.WriteLine("Performance: {0}.{1}->>{2}",args.Method.DeclaringType.FullName,args.Method.Name,_stopwatch.Elapsed.TotalSeconds);
             }
             _stopwatch.Reset();

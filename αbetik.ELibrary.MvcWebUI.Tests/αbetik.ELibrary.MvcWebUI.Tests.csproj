@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1089A94E-6DAB-49EF-982E-11C79CA194DE}</ProjectGuid>
+    <ProjectGuid>{3ABD1998-09F0-4F82-AF04-E16502AE0FF8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>αbetik.ELibrary.MvcWebUI.Tests</RootNamespace>
@@ -65,7 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\αbetik.ELibrary.MvcWebUI\αbetik.ELibrary.MvcWebUI.csproj">
-      <Project>{A4CF42D6-5FB6-45C6-ACCF-D8A9794DB2F9}</Project>
+      <Project>{3B59CBBB-4781-483E-A1E1-66021C42A0FE}</Project>
       <Name>αbetik.ELibrary.MvcWebUI</Name>
     </ProjectReference>
   </ItemGroup>

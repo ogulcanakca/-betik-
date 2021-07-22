@@ -20,6 +20,7 @@ namespace αbetik.ELibrary.Business.Concrete
 {
     [CacheRemoveAspect("",typeof(MemoryCacheManager))]
     [LogAspect(typeof(FileLogger))]
+    
     public class PersonManager : IPersonService
     {
         private IBookDal _bookDal;
