@@ -13,23 +13,24 @@ namespace αbetik.ELibrary.Business.Tests
     [TestClass]
     public class PersonManagerTests 
     {
+        PersonManager pm = new PersonManager();
         [TestMethod, ExpectedException(typeof(System.NullReferenceException))]
         public void Is_getBookDetails_working()
         {
-
+            pm.GetPeople();
             //var mock = new Mock<IPersonService>();
             //var manager = mock.Object;
 
-            Mock<IPersonDal> mock = new Mock<IPersonDal>();
-            PersonManager pm = new PersonManager(mock.Object);
-            pm.GetPeople();
+            //Mock<IPersonDal> mock = new Mock<IPersonDal>();
+            //PersonManager pm = new PersonManager(mock.Object);
+            //pm.GetPeople();
             
-            if (pm== null)
-            {
+            //if (x!= null)
+            //{
                 
 
-                throw new Exception("aq");
-            }
+            //   throw new Exception("aq");
+            //}
         }
     }
 }

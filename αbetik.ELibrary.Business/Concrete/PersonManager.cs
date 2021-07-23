@@ -1,5 +1,6 @@
 ﻿using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 using DevFramework.Core.Aspects.Postsharp.LogAspects;
+using DevFramework.Core.Aspects.Postsharp.PerformanceAspects;
 using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
 using DevFramework.Core.Aspects.Postsharp.ValidationAspects;
 using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
@@ -38,7 +39,9 @@ namespace αbetik.ELibrary.Business.Concrete
             _bookDal = bookDal;
         }
 
-        
+        public PersonManager()
+        {
+        }
 
         [FluentValidationAspect(typeof(PersonValidator))]
         public Person Add(Person person)
@@ -70,6 +73,7 @@ namespace αbetik.ELibrary.Business.Concrete
             return _personDal.GetBookDetails(person);
         }
         [TransactionScopeAspect]
+        [PerformanceCounterAspect(2)]
         public void Ban(Person person, Book book)
         {
             _personService.GetByTcNo("TcNo yaz");
